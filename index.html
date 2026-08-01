@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OcéanaShop — Le style qui vous accompagne</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Découvrez l'élégance de nos sacs à main de luxe au Gabon. Livraison rapide à Libreville, Akanda, Owendo et partout au Gabon. Payez avec Airtel Money et Moov Money.">
+  <meta name="keywords" content="sacs à main, mode gabon, luxe libreville, airtel money gabon, moov money, oceanashop">
+  <meta property="og:title" content="OcéanaShop — Boutique de Sacs à Main Premium au Gabon">
+  <meta property="og:description" content="Découvrez une collection raffinée de sacs à main, cabas et pochettes de soirée avec livraison à domicile au Gabon.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Analytics 4 (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4VF2L9Q3C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S4VF2L9Q3C');
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="app.css">
+  
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <i class="fa-solid fa-truck-fast"></i> LIVRAISON DISPONIBLE PARTOUT AU GABON &nbsp;|&nbsp; <i class="fa-solid fa-wallet"></i> PAIEMENT SÉCURISÉ AIRTEL & MOOV MONEY
+  </div>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="#home" class="logo-link">
+        <div class="logo-symbol">O</div>
+        <div>
+          <span class="logo-text">OcéanaShop</span>
+          <span class="logo-slogan">Le style qui vous accompagne.</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active" id="nav-home">Accueil</a></li>
+          <li><a href="#shop" class="nav-link" id="nav-shop">Boutique</a></li>
+          <li><a href="#shop?cat=sacs-a-main" class="nav-link" id="nav-handbags">Sacs à Main</a></li>
+          <li><a href="#shop?cat=sacs-bandouliere" class="nav-link" id="nav-shoulder">Bandoulières</a></li>
+          <li><a href="#shop?promo=true" class="nav-link" id="nav-promos">Promotions</a></li>
+          <li><a href="#about" class="nav-link" id="nav-about">À Propos</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Account -->
+        <a href="#account" class="action-btn" title="Mon Espace Client" id="btn-account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <!-- Favorites -->
+        <a href="#favorites" class="action-btn" title="Mes Favoris" id="btn-favorites">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count" id="fav-count">0</span>
+        </a>
+        <!-- Cart -->
+        <button class="action-btn" title="Mon Panier" id="btn-cart-toggle">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count" id="cart-count">0</span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="action-btn mobile-menu-toggle" id="btn-mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Node -->
+  <main id="app">
+    <!-- Pages render inside this tag -->
+    <div style="padding: 100px 20px; text-align: center;">
+      <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 40px; color: var(--primary-deep);"></i>
+      <p style="margin-top: 15px; font-weight: 500;">Chargement d'OcéanaShop...</p>
+    </div>
+  </main>
+
+  <!-- Drawer Cart (Tiroir) -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3>Votre Panier</h3>
+      <button class="drawer-close" id="btn-drawer-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="drawer-content" id="drawer-cart-items">
+      <!-- Cart items populated by JavaScript -->
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-summary-row">
+        <span>Sous-total</span>
+        <span id="drawer-subtotal">0 FCFA</span>
+      </div>
+      <div class="cart-summary-row total">
+        <span>Total à payer</span>
+        <span id="drawer-total">0 FCFA</span>
+      </div>
+      <button class="btn btn-primary" id="btn-drawer-checkout" style="width: 100%; margin-top: 15px;">
+        Passer à la commande
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container"></div>
+
+  <!-- Floating WhatsApp Helpline Gabon -->
+  <a href="https://wa.me/241077000000?text=Bonjour%20OcéanaShop,%20je%20souhaite%20des%20informations%20sur%20un%20sac" class="whatsapp-float" target="_blank" title="Aide WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <h3>OcéanaShop</h3>
+          <p>L'adresse gabonaise par excellence pour sublimer votre style au quotidien avec des sacs à main raffinés.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+        <!-- Quick links -->
+        <div class="footer-links-col">
+          <h4>Boutique</h4>
+          <ul>
+            <li><a href="#shop?cat=sacs-a-main">Sacs à Main</a></li>
+            <li><a href="#shop?cat=sacs-bandouliere">Sacs Bandoulière</a></li>
+            <li><a href="#shop?cat=sacs-cabas">Sacs Cabas</a></li>
+            <li><a href="#shop?cat=accessoires">Accessoires</a></li>
+          </ul>
+        </div>
+        <!-- Support/Info -->
+        <div class="footer-links-col">
+          <h4>Aide & Infos</h4>
+          <ul>
+            <li><a href="#about">À Propos</a></li>
+            <li><a href="#shipping-policy">Politique de Livraison</a></li>
+            <li><a href="#return-policy">Retours & Remboursements</a></li>
+            <li><a href="#terms">Conditions de Vente</a></li>
+            <li><a href="#admin">Espace Admin</a></li>
+          </ul>
+        </div>
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+          <h4>Inscrivez-vous</h4>
+          <p>Recevez nos offres exclusives et les nouveautés directement dans votre boîte mail.</p>
+          <form class="newsletter-form" id="newsletter-form-footer">
+            <input type="email" placeholder="Votre adresse e-mail" required>
+            <button type="submit">S'abonner</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 OcéanaShop — Tous droits réservés.</p>
+        <div class="payment-methods">
+          <span class="payment-badge airtel">Airtel Money</span>
+          <span class="payment-badge moov">Moov Money</span>
+          <span class="payment-badge">Carte Bancaire</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="pages/info.js"></script>
+  <script src="pages/home.js"></script>
+  <script src="pages/shop.js"></script>
+  <script src="pages/product.js"></script>
+  <script src="pages/account.js"></script>
+  <script src="pages/checkout.js"></script>
+  <script src="pages/order-tracking.js"></script>
+  <script src="pages/admin.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
